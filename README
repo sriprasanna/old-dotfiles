@@ -1,3 +1,6 @@
 These are my dotfiles. Most of it are taken from internet (thanks github) from awesome people.
 
 Have fun.
+
+To install: run "ruby install.rb"
+To uninstall: run "ruby uninstall.rb"
