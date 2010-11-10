@@ -351,3 +351,31 @@ test -n "$INTERACTIVE" -a -n "$LOGIN" && {
 }
 
 # vim: ts=4 sts=4 shiftwidth=4 expandtab
+
+# misc
+alias gp='rvm use 1.8.7; rvm gemset use gp; cd ~/Code/Freelance/Gameopedia'
+alias psx='rvm use 1.8.7; rvm gemset use playup; cd ~/Code/PlayUP/PSX'
+alias ss='script/server'
+alias sc='script/console'
+alias ..='cd ..'
+alias ....='cd ../../'
+alias reload='source ~/.bashrc'
+alias mysqlload='sudo launchctl load -w /Library/LaunchDaemons/com.mysql.mysqld.plist'
+alias mysqlunload='sudo launchctl unload -w /Library/LaunchDaemons/com.mysql.mysqld.plist'
+#autotest
+export AUTOFEATURE=true
+export RSPEC=true
+
+#misc functions
+function take () {
+  mkdir "$1";
+  cd "$1"
+}
+
+
+#git 
+alias g='git status'
+alias gsr='git svn rebase'
+alias gca='git commit -a'
+alias greset='git add . && git reset --hard'
+alias gsd='git svn dcommit'

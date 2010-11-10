@@ -3,6 +3,17 @@ ARGV.concat ["--readline", "--prompt-mode", "simple"]
 
 require 'irb/completion'
 require 'irb/ext/save-history'
+require 'rubygems'
+require 'hirb'
+extend Hirb::Console
+Hirb::View.enable
+
+# Log to STDOUT if in Rails
+if ENV.include?('RAILS_ENV') && !Object.const_defined?('RAILS_DEFAULT_LOGGER')
+   require 'logger'
+   RAILS_DEFAULT_LOGGER = Logger.new(STDOUT)
+end
+
 IRB.conf[:SAVE_HISTORY] = 500
 IRB.conf[:HISTORY_FILE] = File.expand_path('~/.irb_history')
 
