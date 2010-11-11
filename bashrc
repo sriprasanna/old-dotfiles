@@ -155,6 +155,10 @@ prompt_color() {
     PS2="\[[33;1m\]continue \[[0m[1m\]> "
 }
 
+prompt_snark(){
+  PS1='\[\033[1;31m\]\W/\[\033[0m\] '
+}
+
 # ----------------------------------------------------------------------
 # MACOS X / DARWIN SPECIFIC
 # ----------------------------------------------------------------------
@@ -339,7 +343,7 @@ MANPATH=$(puniq $MANPATH)
 
 # Use the color prompt by default when interactive
 test -n "$PS1" &&
-prompt_color
+prompt_snark
 
 # -------------------------------------------------------------------
 # MOTD / FORTUNE
