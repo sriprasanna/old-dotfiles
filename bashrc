@@ -383,3 +383,7 @@ alias gsr='git svn rebase'
 alias gca='git commit -a'
 alias greset='git add . && git reset --hard'
 alias gsd='git svn dcommit'
+
+#rvm
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
