@@ -1,0 +1,67 @@
+# cd
+alias ..='cd ..'
+
+# ls
+alias ls="ls -F"
+alias l="ls -lAh"
+alias ll="ls -l"
+alias la='ls -A'
+
+# git
+alias gl='git pull'
+alias gp='git push'
+alias gd='git diff'
+alias gc='git commit'
+alias gca='git commit -a'
+alias gco='git checkout'
+alias gb='git branch'
+alias g='git status'
+alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
+alias changelog='git log `git log -1 --format=%H -- CHANGELOG*`..; cat CHANGELOG*'
+alias gsr='git svn rebase'
+alias gca='git commit -a'
+alias greset='git add . && git reset --hard'
+alias gsd='git svn dcommit'
+
+# rails
+alias sc='script/console'
+alias ss='script/server'
+alias sg='script/generate'
+alias a='autotest -rails'
+alias tlog='tail -f log/development.log'
+alias scaffold='script/generate nifty_scaffold'
+alias migrate='rake db:migrate db:test:clone'
+alias rst='touch tmp/restart.txt'
+
+# commands starting with % for pasting from web
+alias %=' '
+
+# misc
+alias gp='rvm use 1.8.7; rvm gemset use gp; cd ~/Code/Freelance/Gameopedia'
+alias psx='rvm use 1.8.7; rvm gemset use playup; cd ~/Code/PlayUP/PSX'
+alias ss='script/server'
+alias sc='script/console'
+alias ..='cd ..'
+alias ....='cd ../../'
+alias reload='source ~/.bashrc'
+#alias mysqlload='sudo launchctl load -w /Library/LaunchDaemons/com.mysql.mysqld.plist'
+#alias mysqlunload='sudo launchctl unload -w /Library/LaunchDaemons/com.mysql.mysqld.plist'
+
+#autotest
+export AUTOFEATURE=true
+export RSPEC=true
+
+
+#git
+alias g='git status'
+
+#rvm
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+
+#misc functions
+function take () {
+  mkdir "$1";
+  cd "$1"
+}
+
