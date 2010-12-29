@@ -4,3 +4,5 @@ Have fun.
 
 To install: run "ruby install.rb"
 To uninstall: run "ruby uninstall.rb"
+
+To store credentials and project specific configurations I use "project_path" which is hooked with bashrc.

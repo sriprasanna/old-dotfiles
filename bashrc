@@ -358,13 +358,7 @@ test -n "$INTERACTIVE" -a -n "$LOGIN" && {
 # vim: ts=4 sts=4 shiftwidth=4 expandtab
 
 # misc
-alias gp='rvm use 1.8.7; rvm gemset use gp; cd ~/Code/Freelance/Gameopedia'
-alias psx='rvm use 1.8.7; rvm gemset use playup; cd ~/Code/PlayUP/PSX'
-alias cage='rvm use 1.9.2@cage;cd ~/Code/PlayUP/CAGE'
-alias pwr='rvm use 1.8.7; rvm gemset use poemwars; cd ~/Code/Personal/poemwars'
-alias brp='rvm use 1.8.7; rvm gemset use blackriverpoets; cd ~/Code/Personal/BlackRiverPoets'
-alias radmin='rvm use 1.9.2@railsadmin; cd ~/gits/sferik/rails_admin'
-alias fabe='rvm use 1.8.7@fabe; cd ~/Code/Personal/FindAllByEmail'
+source ~/.projects_path
 alias ss='script/server'
 alias sc='script/console'
 alias ..='cd ..'
