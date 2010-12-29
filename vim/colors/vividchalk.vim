@@ -105,8 +105,8 @@ highlight StatusLineNC  guifg=#444444 guibg=#aaaaaa gui=none ctermfg=Black cterm
 "endif
 highlight WildMenu      guifg=Black   guibg=#ffff00 gui=bold ctermfg=Black ctermbg=Yellow cterm=bold
 highlight Cursor        guifg=Black guibg=White ctermfg=Black ctermbg=White
-highlight CursorLine    guibg=#222222 guifg=NONE
-highlight CursorColumn  guibg=#222222 guifg=NONE
+highlight CursorLine    guibg=#333333 guifg=NONE
+highlight CursorColumn  guibg=#333333 guifg=NONE
 highlight NonText       guifg=#404040 ctermfg=8
 highlight SpecialKey    guifg=#404040 ctermfg=8
 highlight Directory     none
@@ -116,8 +116,8 @@ highlight Search        guifg=NONE ctermfg=NONE gui=none cterm=none
 call s:hibg("Search"    ,"#555555","Black",81)
 highlight IncSearch     guifg=White guibg=Black ctermfg=White ctermbg=Black
 highlight MoreMsg       guifg=#00AA00 ctermfg=Green
-highlight LineNr        guifg=#99AABB ctermfg=DarkGrey
-call s:hibg("LineNr"    ,"#222222","Black",80)
+highlight LineNr        guifg=#DDEEFF ctermfg=White
+call s:hibg("LineNr"    ,"#222222","DarkBlue",80)
 highlight Question      none
 high link Question      MoreMsg
 highlight Title         guifg=Magenta ctermfg=Magenta
@@ -155,18 +155,18 @@ endif
 hi Identifier cterm=none
 " Commented numbers at the end are *old* 256 color values
 "highlight PreProc       guifg=#EDF8F9
-call s:hifg("Comment"        ,"#AA88DD","DarkMagenta",34) " 92
+call s:hifg("Comment"        ,"#9933CC","DarkMagenta",34) " 92
 " 26 instead?
-call s:hifg("Constant"       ,"#BBBBFF","DarkCyan",21) " 30
-call s:hifg("rubyNumber"     ,"#FFCC66","Yellow",60) " 190
-call s:hifg("String"         ,"#AAFF88","LightGreen",44,82) " 82
-call s:hifg("Identifier"     ,"#FFCC99","Yellow",72) " 220
-call s:hifg("Statement"      ,"#FF8866","LightRed",68) " 202
+call s:hifg("Constant"       ,"#339999","DarkCyan",21) " 30
+call s:hifg("rubyNumber"     ,"#CCFF33","Yellow",60) " 190
+call s:hifg("String"         ,"#66FF00","LightGreen",44,82) " 82
+call s:hifg("Identifier"     ,"#FFCC00","Yellow",72) " 220
+call s:hifg("Statement"      ,"#FF6600","Brown",68) " 202
 call s:hifg("PreProc"        ,"#AAFFFF","LightCyan",47) " 213
 call s:hifg("railsUserMethod","#AACCFF","LightCyan",27)
 call s:hifg("Type"           ,"#AAAA77","Grey",57) " 101
 call s:hifg("railsUserClass" ,"#AAAAAA","Grey",7) " 101
-call s:hifg("Special"        ,"#99AA00","DarkGreen",24) " 7
+call s:hifg("Special"        ,"#33AA00","DarkGreen",24) " 7
 call s:hifg("Regexp"         ,"#44B4CC","DarkCyan",21) " 74
-call s:hifg("rubyMethod"     ,"#FFDDAA","Yellow",77) " 191
+call s:hifg("rubyMethod"     ,"#DDE93D","Yellow",77) " 191
 "highlight railsMethod   guifg=#EE1122 ctermfg=1

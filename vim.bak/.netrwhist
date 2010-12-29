@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/Users/snark/Code/PlayUP/PSX'
+let g:netrw_dirhist_2='/Users/snark/Code/PlayUP/PSX/app'
+let g:netrw_dirhist_3='/Users/snark/Code/PlayUP/PSX/app/models'
+let g:netrw_dirhist_4='/Users/snark/practice/peepcode-vim-code/tutorial-apache-files'

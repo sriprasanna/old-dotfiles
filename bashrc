@@ -49,6 +49,7 @@ umask 0022
 # we want the various sbins on the path along with /usr/local/bin
 PATH="$PATH:/usr/local/sbin:/usr/sbin:/sbin"
 PATH="/usr/local/bin:$PATH"
+PATH="/opt/local/lib/postgresql84/bin:$PATH"
 
 # put ~/bin on PATH if you have it
 test -d "$HOME/bin" &&
@@ -359,6 +360,11 @@ test -n "$INTERACTIVE" -a -n "$LOGIN" && {
 # misc
 alias gp='rvm use 1.8.7; rvm gemset use gp; cd ~/Code/Freelance/Gameopedia'
 alias psx='rvm use 1.8.7; rvm gemset use playup; cd ~/Code/PlayUP/PSX'
+alias cage='rvm use 1.9.2@cage;cd ~/Code/PlayUP/CAGE'
+alias pwr='rvm use 1.8.7; rvm gemset use poemwars; cd ~/Code/Personal/poemwars'
+alias brp='rvm use 1.8.7; rvm gemset use blackriverpoets; cd ~/Code/Personal/BlackRiverPoets'
+alias radmin='rvm use 1.9.2@railsadmin; cd ~/gits/sferik/rails_admin'
+alias fabe='rvm use 1.8.7@fabe; cd ~/Code/Personal/FindAllByEmail'
 alias ss='script/server'
 alias sc='script/console'
 alias ..='cd ..'
@@ -366,6 +372,9 @@ alias ....='cd ../../'
 alias reload='source ~/.bashrc'
 alias mysqlload='sudo launchctl load -w /Library/LaunchDaemons/com.mysql.mysqld.plist'
 alias mysqlunload='sudo launchctl unload -w /Library/LaunchDaemons/com.mysql.mysqld.plist'
+alias pgsqlload='sudo su postgres -c /opt/local/lib/postgresql84/bin/postgres -D /opt/local/var/db/postgresql84/defaultdb'
+# alias postmasterstart='postmaster -D /opt/local/var/db/postgresql84/defaultdb >logfile 2>&1 &'
+alias postmasterstart='pg_ctl start -D /opt/local/var/db/postgresql84/defaultdb'
 #autotest
 export AUTOFEATURE=true
 export RSPEC=true
