@@ -1,2 +1,0 @@
---
-# tomayko.com/about
