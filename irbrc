@@ -4,6 +4,13 @@ ARGV.concat ["--readline", "--prompt-mode", "simple"]
 require 'irb/completion'
 require 'irb/ext/save-history'
 
+begin
+  require 'rubygems'
+  require 'hirb' # sudo gem install cldwalker-hirb --source http://gems.github.com
+  Hirb.enable
+rescue LoadError
+end
+
 # Log to STDOUT if in Rails
 if ENV.include?('RAILS_ENV') && !Object.const_defined?('RAILS_DEFAULT_LOGGER')
    require 'logger'

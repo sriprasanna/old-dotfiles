@@ -358,7 +358,6 @@ test -n "$INTERACTIVE" -a -n "$LOGIN" && {
 # vim: ts=4 sts=4 shiftwidth=4 expandtab
 
 # misc
-source ~/.projects_path
 alias ss='script/server'
 alias sc='script/console'
 alias ..='cd ..'
@@ -390,3 +389,4 @@ alias gsd='git svn dcommit'
 #rvm
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
+source ~/.projects_path
