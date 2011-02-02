@@ -386,6 +386,12 @@ alias gca='git commit -a'
 alias greset='git add . && git reset --hard'
 alias gsd='git svn dcommit'
 
+# If output gets paged, repaint the screen.
+# This solved color codes from being displayed
+# in the rails console
+export LESS="-R"
+
+
 #rvm
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
