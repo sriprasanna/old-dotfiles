@@ -50,6 +50,7 @@ umask 0022
 PATH="$PATH:/usr/local/sbin:/usr/sbin:/sbin"
 PATH="/usr/local/bin:$PATH"
 PATH="/opt/local/lib/postgresql84/bin:$PATH"
+PATH="/Developer/usr/bin:$PATH"
 
 # put ~/bin on PATH if you have it
 test -d "$HOME/bin" &&
