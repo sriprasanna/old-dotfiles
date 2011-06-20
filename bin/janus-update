@@ -1,2 +1,2 @@
 #!/bin/sh
-curl https://github.com/sriprasanna/janus/raw/master/bootstrap.sh -o - | sh
+curl https://raw.github.com/sriprasanna/janus/master/bootstrap.sh -o - | sh
