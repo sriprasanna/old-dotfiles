@@ -15,5 +15,6 @@ test -n "$USER_BASH_COMPLETION_DIR" && {
   unset i
 }
 
+# Use homebrew # brew install git git-flow
 source "/usr/local/etc/bash_completion.d/git-completion.bash"
 source "/usr/local/etc/bash_completion.d/git-flow-completion.bash"

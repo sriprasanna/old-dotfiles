@@ -399,3 +399,4 @@ export LESS="-R"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 source ~/.projects_path
+[[ -s "$HOME/.bash_completion" ]] && source "$HOME/.bash_completion"
