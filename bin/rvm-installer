@@ -55,7 +55,8 @@ md5_match()
       ;;
 
     Linux|*)
-      archive_md5="$(md5sum "${archive}" | awk '{print $1}')"
+      archive_md5="$(md5sum "${archive}")"
+      archive_md5="${archive_md5%% *}"
       ;;
   esac
 
@@ -85,8 +86,10 @@ install_release()
     fi
   fi
 
-  if ! curl -L "${url}" -o "${archive}"
+  if curl -L "${url}" -o "${archive}"
   then
+    true
+  else
     fail "Failed to download ${url} to ${archive} using 'curl', error code ($?)"
   fi
 
@@ -94,7 +97,7 @@ install_release()
   then
     fail "ERROR:
 
-Archive package downloaded does not match it's calculated md5 checksum ${md5}:
+Archive package downloaded does not match its calculated md5 checksum ${md5}:
 
   $rvm_archives_path/rvm-${version}.tar.gz
 
@@ -196,44 +199,13 @@ fi
 
 if [[ -z "${rvm_path:-}" ]]
 then
-  # Set the default sandboxed value.
-  # TODO: Alter the variable names to make sense
-  if [[ -z "${rvm_user_install_flag:-}" ]]
+  if (( UID == 0 ))
   then
-    if (( UID == 0 )) ||
-      [[ -n "${rvm_prefix:-}" && "${rvm_prefix:-}" != "${HOME}" ]]
-    then
-      rvm_user_install_flag=0
-    else
-      rvm_user_install_flag=1
-    fi
+    rvm_path="/usr/local/rvm"
+  else
+    rvm_path="${HOME}/.rvm"
   fi
-
-  if [[ -z "${rvm_prefix:-}" ]]
-  then
-    if (( UID > 0 || rvm_user_install_flag == 1 ))
-    then
-      rvm_prefix="$HOME"
-    else
-      rvm_prefix="/usr/local"
-    fi
-  fi
-
-  true "${rvm_prefix/rvm/scripts}" # Fix rvm_prefix changes, older installs.
-
-  if [[ -z "${rvm_path:-}" ]]
-  then
-    if [[ "$rvm_prefix" == "$HOME" ]]
-    then
-      rvm_path="${rvm_prefix}/.rvm"
-    else
-      rvm_path="${rvm_prefix}/rvm"
-    fi
-  fi
-
-  rvm_path="${rvm_path%%+(\/)}"
 fi
-
 export HOME rvm_path
 
 # Parse CLI arguments.
@@ -312,10 +284,14 @@ done
 
 true "${version:=head}"
 
+if [[ "$rvm_path" != /* ]]
+then
+  fail "The rvm install path must be fully qualified. Tried $rvm_path"
+fi
+
 rvm_src_path="$rvm_path/src"
 rvm_archives_path="$rvm_path/archives"
 rvm_releases_url="https://rvm.beginrescueend.com/releases"
-rvm_prefix="$(dirname $rvm_path)/"
 
 for dir in "$rvm_src_path" "$rvm_archives_path"
 do
@@ -361,4 +337,5 @@ fi
 chmod +x ./scripts/install
 
 # Now we run the RVM installer.
-./scripts/install ${flags[*]} --prefix "$rvm_prefix" --path "$rvm_path"
+./scripts/install ${flags[*]} --path "$rvm_path"
+

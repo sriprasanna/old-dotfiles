@@ -47,7 +47,8 @@ umask 0022
 # ----------------------------------------------------------------------
 
 # we want the various sbins on the path along with /usr/local/bin
-PATH="$PATH:/usr/local/sbin:/usr/sbin:/sbin"
+NODE_PATH="/usr/local/lib/node_modules"
+PATH="$PATH:/usr/local/sbin:/usr/sbin:/sbin:$NODE_PATH"
 PATH="/usr/local/bin:$PATH"
 PATH="/opt/local/lib/postgresql84/bin:$PATH"
 PATH="/Developer/usr/bin:$PATH"
@@ -369,6 +370,9 @@ alias reload='source ~/.bashrc'
 alias mysqlload='sudo launchctl load -w /Library/LaunchDaemons/com.mysql.mysqld.plist'
 alias mysqlunload='sudo launchctl unload -w /Library/LaunchDaemons/com.mysql.mysqld.plist'
 alias pgsqlload='sudo su postgres -c /opt/local/lib/postgresql84/bin/postgres -D /opt/local/var/db/postgresql84/defaultdb'
+alias be='bundle exec'
+alias bec='be cucumber'
+alias ber='be rspec'
 # alias postmasterstart='postmaster -D /opt/local/var/db/postgresql84/defaultdb >logfile 2>&1 &'
 alias postmasterstart='pg_ctl start -D /opt/local/var/db/postgresql84/defaultdb'
 #autotest

@@ -2,6 +2,7 @@
 
 if (( ${rvm_ignore_rvmrc:=0} == 0 ))
 then
+  declare rvmrc
   for rvmrc in /etc/rvmrc "$HOME/.rvmrc"
   do
     if [[ -f "$rvmrc" ]]
@@ -19,38 +20,32 @@ then
       fi
     fi
   done
+  unset rvmrc
 fi
 
-if (( ${rvm_user_install_flag:=0} == 0 ))
+export rvm_path
+if [[ -z "${rvm_path:-}" ]]
 then
-  if (( UID == 0 )) || [[ "${rvm_prefix:-}" != "$HOME" ]]
+  if (( UID == 0 ))
   then
-    rvm_user_install_flag=0
+    rvm_path="/usr/local/rvm"
+  elif [[ -d "${HOME}/.rvm" ]]
+  then
+    rvm_path="${HOME}/.rvm"
+  elif [[ -d "/usr/local/rvm" ]]
+  then
+    rvm_path="/usr/local/rvm"
   else
-    rvm_user_install_flag=1
+    echo "Can't find rvm install!" 1>&2
+    exit 1
   fi
 fi
 
-if [[ -z "${rvm_prefix:-""}" ]]
+# if to prevent fork-bomb
+if source "${rvm_scripts_path:="$rvm_path/scripts"}/rvm"
 then
-  if (( ${rvm_user_install_flag:=0} == 0 ))
-  then
-    rvm_prefix="/usr/local"
-  else
-    rvm_prefix="$HOME"
-  fi
+  rvm "$@"
+else
+  echo "Error sourcing RVM!"  1>&2
+  exit 1
 fi
-
-if [[ -z "${rvm_path:-""}" ]]
-then
-  if [[ "$rvm_prefix" = "$HOME" ]]
-  then
-    rvm_path="${rvm_prefix}/.rvm"
-  else
-    rvm_path="${rvm_prefix}/rvm"
-  fi
-fi
-
-source "${rvm_scripts_path:="$rvm_path/scripts"}/rvm"
-
-rvm "$@"
