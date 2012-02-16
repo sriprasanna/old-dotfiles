@@ -1,0 +1,5 @@
+" Handle multiple buffers better.
+set hidden
+
+" Hide search highlighting
+map <Leader>h :set invhls <CR>
