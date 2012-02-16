@@ -9,3 +9,10 @@ set hidden
 
 " Hide search highlighting
 map <Leader>h :set invhls <CR>
+
+" Always open in full screen
+if has("gui_macvim")
+  " Fullscreen takes up entire screen
+  set fuoptions=maxhorz,maxvert
+  au GUIEnter * set fullscreen
+endif
