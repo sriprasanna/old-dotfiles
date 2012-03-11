@@ -57,6 +57,10 @@ PATH="/Developer/usr/bin:$PATH"
 test -d "$HOME/bin" &&
 PATH="$HOME/bin:$PATH"
 
+# put ~/mybin on PATH if you have it
+test -d "$HOME/mybin" &&
+PATH="$HOME/mybin:$PATH"
+
 # ----------------------------------------------------------------------
 # ENVIRONMENT CONFIGURATION
 # ----------------------------------------------------------------------
