@@ -386,7 +386,7 @@ function take () {
 }
 
 
-#git 
+#git
 alias g='git status'
 alias gsr='git svn rebase'
 alias gca='git commit -a'
@@ -403,4 +403,5 @@ export LESS="-R"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 source ~/.projects_path
+source ~/.secrets
 [[ -s "$HOME/.bash_completion" ]] && source "$HOME/.bash_completion"
