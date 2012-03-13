@@ -61,6 +61,11 @@ PATH="$HOME/bin:$PATH"
 test -d "$HOME/mybin" &&
 PATH="$HOME/mybin:$PATH"
 
+# put /usr/X11/bin/ on PATH if you have it
+test -d "/usr/X11/bin" &&
+PATH="/usr/X11/bin:$PATH"
+
+
 # ----------------------------------------------------------------------
 # ENVIRONMENT CONFIGURATION
 # ----------------------------------------------------------------------
