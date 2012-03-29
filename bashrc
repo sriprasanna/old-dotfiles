@@ -414,3 +414,6 @@ export LESS="-R"
 source ~/.projects_path
 source ~/.secrets
 [[ -s "$HOME/.bash_completion" ]] && source "$HOME/.bash_completion"
+
+shopt -s histappend
+export PROMPT_COMMAND="history -n; history -a"
