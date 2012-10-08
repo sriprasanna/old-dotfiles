@@ -3,6 +3,7 @@ set guioptions-=T
 
 " Default gui color scheme
 color matrix
+color solarized
 
 " Handle multiple buffers better.
 set hidden
