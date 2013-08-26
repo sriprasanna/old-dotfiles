@@ -12,7 +12,7 @@ set hidden
 map <Leader>h :set invhls <CR>
 
 set lines=800 columns=800
-set wrap
+set linebreak
 
 " Always open in full screen
 "if has("gui_macvim")
