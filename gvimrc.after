@@ -2,14 +2,17 @@
 set guioptions-=T
 
 " Default gui color scheme
-color matrix
 color solarized
+color matrix
 
 " Handle multiple buffers better.
 set hidden
 
 " Hide search highlighting
 map <Leader>h :set invhls <CR>
+
+set lines=800 columns=800
+set wrap
 
 " Always open in full screen
 "if has("gui_macvim")
