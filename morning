@@ -1,1 +1,6 @@
+open -a Firefox
+open -a Adium
+open -a Skype
+open -a Limechat
+open -a airmail
 brew update && brew upgrade
