@@ -3,3 +3,4 @@ open -a Adium
 open -a Skype
 open -a Limechat
 brew update && brew upgrade
+heroku update
