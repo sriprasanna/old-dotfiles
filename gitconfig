@@ -31,6 +31,7 @@
     filemode = true
     logallrefupdates = true
     whitespace = space-before-tab, trailing-space
+	autocrlf = input
 
 [help]
     browser = open
@@ -76,3 +77,5 @@
 
 [github]
   user = sriprasanna
+[svn]
+	rmdir = true
