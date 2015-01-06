@@ -32,6 +32,7 @@
     logallrefupdates = true
     whitespace = space-before-tab, trailing-space
 	autocrlf = input
+	editor = /usr/local/bin/vim
 
 [help]
     browser = open
