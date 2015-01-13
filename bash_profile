@@ -41,3 +41,5 @@ export TODO="t"
 
 # Load Bash It
 # source $BASH_IT/bash_it.sh
+
+[ -r "$HOME/.smartcd_config" ] && ( [ -n $BASH_VERSION ] || [ -n $ZSH_VERSION ] ) && source ~/.smartcd_config

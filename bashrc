@@ -418,3 +418,5 @@ source ~/.secrets
 shopt -s histappend
 export PROMPT_COMMAND="history -n; history -a"
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+[ -r "$HOME/.smartcd_config" ] && ( [ -n $BASH_VERSION ] || [ -n $ZSH_VERSION ] ) && source ~/.smartcd_config

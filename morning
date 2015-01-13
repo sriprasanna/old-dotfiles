@@ -1,13 +1,7 @@
-open -a Firefox
+open -a Firefox http://reddit.com/ http://reddit.com/r/worldnews http://twitter.com/newsyc50
 open -a Jitsi
 open -a Skype
 open -a Limechat
 open -a Thunderbird
-open -a Firefox http://newsmap.jp/
-open -a Firefox http://realnews.com/
-open -a Firefox http://www.vox.com/
-open -a Firefox http://reddit.com/
-open -a Firefox http://reddit.com/r/worldnews
-open -a Firefox http://twitter.com/newsyc50
 brew update && brew upgrade
 heroku update
